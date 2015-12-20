@@ -4,19 +4,18 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.CompoundButton;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.parse.ParsePush;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
 
 public class MainActivity extends AppCompatActivity {
-
-    @Bind(R.id.tv_status)
-    TextView tv_status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +24,15 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.btn_yes)
-    public void subscribe(View view) {
-        ParsePush.subscribeInBackground("Ane");
-        tv_status.setText("Suscrita a las notificaciones");
-    }
-
-    @OnClick(R.id.btn_disable)
-    public void notify(View view) {
-        ParsePush.unsubscribeInBackground("Ane");
-        tv_status.setText("Cancelar suscripcion");
+    @OnCheckedChanged(R.id.subscription_button)
+    public void subscribe(CompoundButton view, boolean isChecked) {
+        if (isChecked) {
+            ParsePush.subscribeInBackground("Ane");
+            Toast.makeText(getApplicationContext(), "Suscrita a las notificaciones", Toast.LENGTH_SHORT).show();
+        } else {
+            ParsePush.unsubscribeInBackground("Ane");
+            Toast.makeText(getApplicationContext(), "Cancelar suscripcion", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
@@ -44,6 +42,6 @@ public class MainActivity extends AppCompatActivity {
         push.setChannel("Ane");
         push.setMessage("TE ESTOY LLAMANDO ANE.");
         push.sendInBackground();
-        tv_status.setText("Notificacion enviada");
+        Toast.makeText(getApplicationContext(), "Notificatión enviada", Toast.LENGTH_SHORT).show();
     }
 }
