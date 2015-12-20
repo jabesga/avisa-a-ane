@@ -16,6 +16,7 @@
     <permission
         android:name="com.besga.jonander.avisaaane.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="com.besga.jonander.avisaaane.permission.C2D_MESSAGE" />
 
     <application
@@ -52,11 +53,18 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-                <!--
-                  IMPORTANT: Change "com.parse.starter" to match your app's package name.
-                -->
+                <!--                   IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
                 <category android:name="com.besga.jonander.avisaaane" />
             </intent-filter>
+        </receiver>
+        <receiver android:name=".AaAWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/aa_awidget_info" />
         </receiver>
     </application>
 
