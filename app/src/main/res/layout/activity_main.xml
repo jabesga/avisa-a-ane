@@ -2,42 +2,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_yes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Soy Ane"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ya no soy Ane"
-        android:id="@+id/btn_disable"
-        android:layout_below="@+id/btn_yes"
-        android:layout_alignLeft="@+id/btn_notify"
-        android:layout_alignStart="@+id/btn_notify" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AVISAR A ANE"
+    <ImageButton
         android:id="@+id/btn_notify"
-        android:layout_centerHorizontal="true" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="AVISAR A ANE"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/toggleButton"
+        android:src="@drawable/button_selector" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ToggleButton
+        android:id="@+id/subscription_button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/tv_status"
-        android:layout_above="@+id/btn_yes"
-        android:layout_centerHorizontal="true" />
+        android:textOff="No soy Ane"
+        android:textOn="Soy ane"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
