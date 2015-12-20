@@ -37,11 +37,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btn_notify)
-    public void unsubscribe(View view) {
+    public void btn_notify(View view) {
+        notify_parse();
+        Toast.makeText(getApplicationContext(), "Notificatión enviada", Toast.LENGTH_SHORT).show();
+    }
+
+    static void notify_parse() {
         ParsePush push = new ParsePush();
         push.setChannel("Ane");
         push.setMessage("TE ESTOY LLAMANDO ANE.");
         push.sendInBackground();
-        Toast.makeText(getApplicationContext(), "Notificatión enviada", Toast.LENGTH_SHORT).show();
     }
 }
