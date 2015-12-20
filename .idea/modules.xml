@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AvisaAAne.iml" filepath="$PROJECT_DIR$/AvisaAAne.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/avisa-a-ane.iml" filepath="$PROJECT_DIR$/avisa-a-ane.iml" />
     </modules>
   </component>
 </project>
