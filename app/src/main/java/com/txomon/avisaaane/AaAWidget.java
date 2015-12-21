@@ -1,4 +1,4 @@
-package com.besga.jonander.avisaaane;
+package com.txomon.avisaaane;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
