@@ -1,30 +1,22 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'AAA Keystore'
-            keyPassword 'txomon is smart'
-            storeFile file('C:/Users/JONANDER/Desktop/AAA_Keystore.jks')
-            storePassword 'txomon is smart'
-        }
-    }
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
     defaultConfig {
         applicationId "com.txomon.avisaaane"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 1
-        versionName "0.1"
+        versionCode 2
+        versionName "0.2"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
         }
         debug {
-            signingConfig signingConfigs.config
         }
     }
 }
