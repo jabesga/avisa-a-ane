@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Avisa A Ane</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="appwidget_text">¡AaA!</string>
+    <string name="add_widget">Add widget</string>
 </resources>
